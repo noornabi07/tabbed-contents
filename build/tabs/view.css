@@ -1,0 +1,276 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../../../wordpress2/wp-content/plugins/plugin-slug/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!../../../../wordpress2/wp-content/plugins/plugin-slug/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!../../../../wordpress2/wp-content/plugins/plugin-slug/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/tabs/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-tcb-tabs svg {
+  font-size: 30px;
+}
+.wp-block-tcb-tabs .tabMenu li {
+  border-radius: 3px;
+  overflow: hidden;
+  text-decoration: none;
+  word-wrap: break-word;
+  transition: all 0.2s ease-in-out;
+  background: -webkit-linear-gradient(left, #f3fbed, #f1f9eb, #f0f7e9, #e4eedc, #dbeccd);
+  cursor: pointer;
+  position: relative;
+}
+.wp-block-tcb-tabs .tabMenu li img,
+.wp-block-tcb-tabs .tabMenu li i {
+  margin-bottom: 10px;
+}
+.wp-block-tcb-tabs .tabMenu li .fa-solid.fa-xmark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 8px;
+  line-height: 15px;
+}
+.wp-block-tcb-tabs .tabMenu li .tabLabel {
+  display: inline-block;
+  font-weight: 700;
+  margin: 0;
+}
+.wp-block-tcb-tabs .tabMenu li .tabLabel * {
+  font-size: inherit;
+  line-height: inherit;
+  margin: inherit !important;
+}
+.wp-block-tcb-tabs .wp-block-tcb-tab {
+  padding: 25px;
+  display: none;
+  color: #333;
+  word-wrap: break-word;
+}
+.wp-block-tcb-tabs .wp-block-tcb-tab > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.wp-block-tcb-tabs .wp-block-tcb-tab > *:nth-child(1) {
+  transition-delay: 0.2s;
+  margin-top: 0;
+}
+.wp-block-tcb-tabs .wp-block-tcb-tab > *:nth-child(2) {
+  transition-delay: 0.3s;
+}
+.wp-block-tcb-tabs .wp-block-tcb-tab > *:nth-child(3) {
+  transition-delay: 0.4s;
+}
+.wp-block-tcb-tabs .wp-block-tcb-tab > *:nth-child(4) {
+  transition-delay: 0.5s;
+}
+.wp-block-tcb-tabs .wp-block-tcb-tab.active {
+  display: block;
+}
+.wp-block-tcb-tabs .wp-block-tcb-tab.activeContent > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+.wp-block-tcb-tabs .tcbTabContent {
+  display: flex;
+}
+.wp-block-tcb-tabs .tcbTabContent.default {
+  flex-direction: column;
+}
+.wp-block-tcb-tabs .tcbTabContent.default .tabMenu {
+  list-style-type: none;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+.wp-block-tcb-tabs .tcbTabContent.default .tabMenu li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 10px 40px 0px rgba(107, 125, 179, 0.11);
+  padding: 15px 10px;
+}
+.wp-block-tcb-tabs .tcbTabContent.default .tabMenu li.active {
+  border-radius: 2px;
+  background: linear-gradient(90deg, #019447 0%, #10d56d 100%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.wp-block-tcb-tabs .tcbTabContent.default .tabMenu li.active i {
+  transition: all 0.4s ease-in-out;
+}
+.wp-block-tcb-tabs .tcbTabContent.default .tabMenu li .fa-solid.fa-xmark {
+  font-size: 20px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme1 {
+  flex-direction: column;
+  background: #fff;
+  padding: 10px;
+  border-radius: 20px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme1 .tabMenu {
+  list-style-type: none;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0;
+  border-bottom: 1px solid #CCCCCC;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme1 .tabMenu li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 10px;
+  position: relative;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme1 .tabMenu li .menuIcon {
+  margin-top: 5px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme1 .tabMenu li .fa-solid.fa-xmark {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme1 .tabMenu li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, rgb(157, 71, 240), rgba(71, 240, 240, 0.8));
+  transform: translateX(-50%);
+  transition: width 0.5s ease-in-out;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme1 .tabMenu li.active::after {
+  width: 100%;
+  transform: translateX(-50%);
+}
+.wp-block-tcb-tabs .tcbTabContent.theme2 {
+  flex-direction: row;
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme2 .tabMenu {
+  margin-top: 0px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme2 .tabMenu li {
+  flex-direction: row;
+  width: 220px;
+  padding: 12px 5px;
+  padding-right: 5px;
+  margin-right: 7px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme2 .tabMenu li .menuIcon {
+  margin-right: 9px;
+  margin-left: 5px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme2 .tabMenu li .fa-solid.fa-xmark {
+  font-size: 16px;
+  margin-right: 5px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme2 .tabMenu li.active {
+  border-left: 4px solid #118B50;
+  transition: 0.3s ease-in-out;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme2 .tabContent {
+  border-radius: 8px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme3 {
+  flex-direction: column;
+  background: #fff;
+  padding: 0px;
+  border-radius: 20px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme3 .tabMenu {
+  list-style-type: none;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme3 .tabMenu li .fa-solid.fa-xmark {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme3 .tabMenu li .menuIcon i {
+  margin-top: 6px;
+  padding: 5px 25px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme3 .tabMenu li .tabLabel {
+  display: none;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme4 {
+  flex-direction: column;
+  background: #fff;
+  padding: 0px;
+  border-radius: 20px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme4 .tabMenu {
+  list-style-type: none;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme4 .tabMenu li {
+  border-radius: 0px 60px 0px 0px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme4 .tabMenu li .fa-solid.fa-xmark {
+  font-size: 16px;
+  margin-bottom: 0px;
+  position: absolute;
+  left: 0;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme4 .tabMenu li .menuIcon i {
+  margin-top: 6px;
+  padding: 5px 9px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme4 .tabMenu li.active {
+  border-radius: 0px 60px 0px 0px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme5 {
+  flex-direction: column;
+  background: #fff;
+  padding: 0px;
+  border-radius: 20px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme5 .tabMenu {
+  list-style-type: none;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0;
+  border-bottom: 2px solid #ddd;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme5 .tabMenu li .menuIcon {
+  display: none;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme5 .tabMenu li .fa-solid.fa-xmark {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+.wp-block-tcb-tabs .tcbTabContent.theme5 .tabMenu li .menuIcon i {
+  margin-top: 6px;
+  padding: 5px 9px;
+}
+@media (max-width: 576px) {
+  .wp-block-tcb-tabs .tcbTabContent .tabMenu li {
+    flex-grow: 1;
+  }
+  .wp-block-tcb-tabs .tabMenu {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+@media (min-width: 768px) {
+  .wp-block-tcb-tabs .tcbTabContent .tabMenu li {
+    padding: 20px 12px;
+  }
+}
+
+/*# sourceMappingURL=view.css.map*/
