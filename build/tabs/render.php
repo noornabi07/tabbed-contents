@@ -2,7 +2,10 @@
 $id = wp_unique_id('tcbTabbedContent-');
 extract($attributes);
 
-$active = $tabBorder['active'] ?? [ 'width' => 0, 'color' => '#000', 'style' => 'solid' ];
+$active = $tabBorder['active'] ?? ['width' => 0, 'color' => '#000', 'style' => 'solid'];
+
+$theme = $options['theme'] ? $options['theme'] : "default";
+$height = $borderHeight['height'] ?? "3px";
 
 $mainSl = "#$id";
 $tabMenuSl = "$mainSl .tabMenu";
@@ -14,14 +17,14 @@ $styles = TCBPlugin::getTypoCSS('', $titleTypo)['googleFontLink'] .
 		padding: " . implode(' ', $tabsPadding) . ";
 	}
 	$tabMenuSl li{
-		". TCBPlugin::getColorsCSS($tabColors) ."
+		" . TCBPlugin::getColorsCSS($tabColors) . "
 	}
-
+	
 	$tabMenuSl li.active {
-		" . 
-		TCBPlugin::getColorsCSS($tabActiveColors) .
-		TCBPlugin:: getBorderBoxCSS($active)
-		. "
+		" .
+	TCBPlugin::getColorsCSS($tabActiveColors) .
+	TCBPlugin::getBorderBoxCSS($active)
+	. "
 	}
 	$tabMenuSl li .menuIcon i{
 		font-size: " . $icon['size'] . ";
@@ -34,12 +37,20 @@ $styles = TCBPlugin::getTypoCSS('', $titleTypo)['googleFontLink'] .
 	TCBPlugin::getBackgroundCSS($contentBG)
 	. "}
 ";
+
+if ($theme === "theme1") {
+	$styles .= "
+	$tabMenuSl li::after {
+		height: $height;
+		" . TCBPlugin::getBackgroundCSS($borderBG) . "
+	}";
+}
 ?>
 
 <div <?php echo get_block_wrapper_attributes(); ?> id='<?php echo esc_attr($id); ?>' data-attributes='<?php echo esc_attr(wp_json_encode($attributes)); ?>'>
 
 	<style>
-		<?php echo esc_html( $styles ); ?>
+		<?php echo esc_html($styles); ?>
 	</style>
 
 	<div class='tcbTabContent <?php echo esc_attr($options['theme'] ?? 'default'); ?> '>

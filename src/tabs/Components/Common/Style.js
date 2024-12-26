@@ -1,11 +1,12 @@
 import { getBackgroundCSS, getBorderBoxCSS, getBoxCSS, getColorsCSS, getTypoCSS } from "../../../../../bpl-tools/utils/getCSS";
 
 const Style = ({ attributes, id }) => {
-	const { tabColors, tabActiveColors, tabBorder = {}, icon, tabsPadding, titleTypo, contentBG } = attributes;
+	const { tabColors, tabActiveColors, tabBorder = {}, icon, tabsPadding, options, titleTypo, contentBG, borderBG = {}, borderHeight = {} } = attributes;
 	const { active = {} } = tabBorder;
+	const { theme = "default" } = options;
+	const { height = "3px" } = borderHeight;
 
 	const mainSl = `#${id}`;
-	// const theme1Sl = `${mainSl} .tcbTabContent.theme1`;
 	const tabMenu = `${mainSl} .tabMenu`;
 
 	return <style dangerouslySetInnerHTML={{
@@ -19,6 +20,16 @@ const Style = ({ attributes, id }) => {
 		${tabMenu} li {
 			${getColorsCSS(tabColors)}
 		}
+		
+		${tabMenu} li::after{
+			${getBackgroundCSS(borderBG)}
+		}
+
+		${theme === "theme1" ? `${tabMenu} li::after {
+			height: ${height};
+			${getBackgroundCSS(borderBG)};
+		}` : ""}
+		
 		${tabMenu} li.active {
 			${getColorsCSS(tabActiveColors)}
 			${getBorderBoxCSS(active)}				

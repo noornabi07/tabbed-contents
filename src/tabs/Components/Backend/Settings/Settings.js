@@ -18,9 +18,10 @@ import { emUnit, pxUnit } from "../../../../../../bpl-tools/utils/options";
 import { themeSwitch } from "../../../../utils/functions";
 
 const Settings = ({ attributes, setAttributes, iconValue, setIconValue, isOpen, toggleDropdown }) => {
-  const { tabsPadding, tabColors, tabActiveColors, titleTypo, icon, contentBG, options = {}, tabBorder = {} } = attributes;
+  const { tabsPadding, tabColors, tabActiveColors, titleTypo, icon, contentBG, options = {}, tabBorder = {}, borderHeight = {}, borderBG = {} } = attributes;
   const { size: iconSize, color, activeColor } = icon;
   const { active = {} } = tabBorder;
+  const { height = "3px" } = borderHeight;
 
   const { theme = "default" } = options;
 
@@ -78,27 +79,56 @@ const Settings = ({ attributes, setAttributes, iconValue, setIconValue, isOpen, 
           />
 
           {/* active tab border control */}
-          <BorderBoxControl label={__('Tab Borders')} value={active} onChange={val => {
-            const newBorder = produce(tabBorder, draft => {
-              draft.active = val
-            })
-            setAttributes({ tabBorder: newBorder })
-          }} />
+          {
+            "theme1" === theme ? "" : <BorderBoxControl label={__('Tab Borders')} value={active} onChange={val => {
+              const newBorder = produce(tabBorder, draft => {
+                draft.active = val
+              })
+              setAttributes({ tabBorder: newBorder })
+            }} />
+          }
 
-          <Typography label={__("Title Typography", "tabbed-contents")} value={titleTypo} onChange={(val) => setAttributes({ titleTypo: val })} produce={produce} />
+          {
+            "theme3" === theme ? "" : <Typography label={__("Title Typography", "tabbed-contents")} value={titleTypo} onChange={(val) => setAttributes({ titleTypo: val })} produce={produce} />
+          }
 
-          <UnitControl
-            label={__("Icon Size", "tabbed-contents")}
-            className="mt20"
-            labelPosition="left"
-            value={iconSize}
-            onChange={(val) => setAttributes({ icon: { ...icon, size: val } })}
-            units={[pxUnit(), emUnit()]}
-          />
+          {
+            "theme5" === theme ? "" : <>
+              <UnitControl
+                label={__("Icon Size", "tabbed-contents")}
+                className="mt20"
+                labelPosition="left"
+                value={iconSize}
+                onChange={(val) => setAttributes({ icon: { ...icon, size: val } })}
+                units={[pxUnit(), emUnit()]}
+              />
 
-          <ColorControl label={__("Icon Color", "tabbed-contents")} value={color} onChange={(val) => setAttributes({ icon: { ...icon, color: val } })} />
+              <ColorControl label={__("Icon Color", "tabbed-contents")} value={color} onChange={(val) => setAttributes({ icon: { ...icon, color: val } })} />
 
-          <ColorControl label={__("Icon Active Color", "tabbed-contents")} value={activeColor} onChange={(val) => setAttributes({ icon: { ...icon, activeColor: val } })} />
+              <ColorControl label={__("Icon Active Color", "tabbed-contents")} value={activeColor} onChange={(val) => setAttributes({ icon: { ...icon, activeColor: val } })} />
+            </>
+          }
+
+          {
+            "theme1" === theme && <>
+              <UnitControl
+                label={__("Active Border Bottom Size", "tabbed-contents")}
+                className="mt20"
+                labelPosition="left"
+                value={height}
+                onChange={(val) => {
+                  const newBorder = produce(borderHeight, draft => {
+                    draft.height = val
+                  })
+                  setAttributes({ borderHeight: newBorder })
+                }}
+                units={[pxUnit(), emUnit()]}
+              />
+
+              <Background label={__("Border Color", "tabbed-contents")} value={borderBG} onChange={(val) => setAttributes({ borderBG: val })} />
+            </>
+
+          }
         </PanelBody>
 
         {/* Content Panel */}

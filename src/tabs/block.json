@@ -101,6 +101,19 @@
 				"activeColor": "#fff"
 			}
 		},
+		"borderHeight": {
+			"type": "object",
+			"default": {
+				"height": "3px"
+			}
+		},
+		"borderBG": {
+			"type": "object",
+			"default": {
+				"gradient": "linear-gradient(to right, rgba(157, 71, 240, 1), rgba(71, 240, 240, 0.8))",
+				"type": "gradient"
+			}
+		},
 		"contentBG": {
 			"type": "object",
 			"default": {
